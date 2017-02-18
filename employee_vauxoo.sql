@@ -53,4 +53,12 @@ INSERT INTO hobby_relation VALUES(3,2);
 INSERT INTO hobby_relation VALUES(3,3);
 INSERT INTO hobby_relation VALUES(4,1);
 INSERT INTO hobby_relation VALUES(4,2);
+
+ALTER TABLE employee ADD jefe int;
+ALTER TABLE employee ADD FOREIGN KEY (jefe) REFERENCES employee (id);
+
+UPDATE employee SET jefe=1 WHERE id=1;
+UPDATE employee SET jefe=1 WHERE id=2;
+UPDATE employee SET jefe=3 WHERE id=3;
+UPDATE employee SET jefe=3 WHERE id=4;
 -- ...
