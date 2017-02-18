@@ -1,16 +1,24 @@
 """
-Your module documentation here
+Module for practice on python for vauxoo to test me, I want to be an intern :)
 """
 
 
-class PrimeClass(object):
+class prime_class(object):
     """
-    Your class documentation here
+    this class will help to determine which type of number are you evaluating
     """
 
     def is_prime(self, num_int):
         """
-        Your method documentation here
+        here we are going to evaluate if num_int is a prime number (only divisible by itself or 1)
         """
         # your primes code here
-        return "not implement yet"  # Remove this dummy line
+	divisible = False
+	for i in range(2,num_int-1):
+		if num_int % i == 0:
+			divisible = True
+	if divisible == True:
+		return False
+	else:
+		return True
+		
