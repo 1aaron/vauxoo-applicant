@@ -31,7 +31,26 @@ INSERT INTO employee VALUES (2,'Jose','Perez',2);
 INSERT INTO employee VALUES (3,'Jua','Martinez',3);
 INSERT INTO employee VALUES (4,'Maricela','Gomez',5);
 
-CREATE TABLE employee_hobby (
+CREATE TABLE employee_hobby (id int NOT NULL, 
+name varchar(50) NOT NULL, 
+description varchar(250), 
+PRIMARY KEY (id)
 );
 
+INSERT INTO employee_hobby VALUES (1,'reading','this person wants to read');
+INSERT INTO employee_hobby VALUES (2,'coding','this person wants to code');
+INSERT INTO employee_hobby VALUES (3,'play music','this person wants to play music');
+
+CREATE TABLE hobby_relation (employee int,hobby int);
+ALTER TABLE hobby_relation ADD FOREIGN KEY (employee) REFERENCES employee(id);
+ALTER TABLE hobby_relation ADD FOREIGN KEY (hobby) REFERENCES employee_hobby (id);
+
+INSERT INTO hobby_relation VALUES(1,1);
+INSERT INTO hobby_relation VALUES(1,2);
+INSERT INTO hobby_relation VALUES(2,1);
+INSERT INTO hobby_relation VALUES(2,3);
+INSERT INTO hobby_relation VALUES(3,2);
+INSERT INTO hobby_relation VALUES(3,3);
+INSERT INTO hobby_relation VALUES(4,1);
+INSERT INTO hobby_relation VALUES(4,2);
 -- ...
