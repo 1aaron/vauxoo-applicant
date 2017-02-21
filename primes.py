@@ -14,15 +14,11 @@ class PrimeClass(object):
         (only divisible by itself or 1)
         """
         # your primes code here
-        divisible = False
-        if num_int < 3:
+        if num_int == 2 or num_int == 0:
             return True
-        for number in range(2, num_int-1):
-            if num_int % number == 0:
-                global divisible
-                divisible = True
-                break
-        if divisible:
+        if num_int == 1:
             return False
-        else:
-            return True
+        for number in range(2, num_int):
+            if num_int % number == 0:
+                return False
+        return True
