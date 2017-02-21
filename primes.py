@@ -19,6 +19,7 @@ class PrimeClass(object):
             return True
         for number in range(2, num_int-1):
             if num_int % number == 0:
+                global divisible
                 divisible = True
                 break
         if divisible:

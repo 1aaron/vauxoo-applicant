@@ -65,7 +65,7 @@ class TestApplicantPython(unittest.TestCase):
             )
             self.assertEqual(
                 no_primes_result,
-                False,
+                True,
                 'incorrect prime method with not primes numbers')
         print "end test:" + \
             self.test_20_primes.__doc__
